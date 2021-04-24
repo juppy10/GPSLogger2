@@ -37,7 +37,6 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-#define dataSze 200
 #define dataSndSze 100
 /* USER CODE END PM */
 
@@ -65,14 +64,11 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t myRxData[dataSze];
+uint8_t myRxData[dataSndSze];
 uint8_t myTxData[dataSndSze];
-uint8_t UARTMsg[dataSndSze];
-uint8_t dataTempStore[60];
-uint8_t i2cTxReg[1];
-uint8_t i2cRxReg[6];
-uint8_t IMUAdd=0x68;
-HAL_StatusTypeDef ret;
+uint8_t tempRXStore[dataSndSze];
+uint8_t RxBuf[dataSndSze];
+uint8_t TxBuf[dataSndSze];
 /* USER CODE END 0 */
 
 /**
@@ -82,7 +78,7 @@ HAL_StatusTypeDef ret;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+    TxBuf[0]=0x04;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -108,17 +104,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-    i2cTxReg[0]=0x6B;
-    i2cTxReg[0]=0x00;
-
-  ret = HAL_I2C_Master_Transmit(&hi2c1, IMUAdd,i2cTxReg,2,HAL_MAX_DELAY);
-    if ( ret != HAL_OK ) {
-        strcpy((char*)UARTMsg, "Error Tx\r\n");
-    }else{
-        strcpy((char*)UARTMsg, "Success\r\n");
-    }
-    HAL_UART_Transmit(&huart2,UARTMsg,6,10);
-
+  HAL_UART_Receive_DMA(&huart1,myRxData,dataSndSze);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -128,14 +114,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-        i2cTxReg[0]=0x3B;
-        HAL_I2C_Master_Transmit(&hi2c1,IMUAdd,i2cTxReg,1,10);
-        HAL_I2C_Master_Receive(&hi2c1,IMUAdd,i2cRxReg,6,10);
+        HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_13);
         HAL_Delay(1000);
-        HAL_UART_Transmit(&huart2,i2cRxReg,6,10);
-
-        /*HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_13);
-        HAL_Delay(1000);*/
     }
   /* USER CODE END 3 */
 }
@@ -352,60 +332,101 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-/*void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
      //Prevent unused argument(s) compilation warning
     UNUSED(huart);
 
-   *//* if(dataTempStore[0]!=0){    //if there is data in the temp store
-        memcpy(myTxData, dataTempStore, dataSndSze);     //copy data to trans buf
-        int k=0;
-        while(dataTempStore[k]!=0x0d){  //find end of data in tempstore
-                k++;
-        }
-        //copy rest of data across
-        for(int i=0;i<dataSze-5;i++) {
-            if (myRxData[i] == 0x0a && myRxData[i+5] == 0x4c) {
-                i++;
-                while (i < dataSze && myRxData[i] != 0x0d) {    //when the end of the array is reached or a carriage return is reached
-                    myTxData[k] = myRxData[i];
-                    i++;
-                    k++;
-                }
-                myTxData[k] = 0x0d;
-                myTxData[k + 1] = 0x0a;   //add new line char at end of array
-            }
-        }
+    memcpy(RxBuf,myRxData, sizeof(uint8_t)*dataSndSze);
+
+    int endOfBuf=0;
+    while(TxBuf[endOfBuf]!=0x04){  //find the end of the temp rx buf
+        endOfBuf++;
     }
+
+    int prevNL=0, prevStrt=0;
+    for(int i=0;i<dataSndSze;i++){
+        if(RxBuf[i]==0x0a) {
+            prevNL=i;   //set newline char position
+            if(endOfBuf!=0){
+                int x=1;
+            }
+            memcpy(TxBuf+endOfBuf,RxBuf+prevStrt, sizeof(uint8_t)*(i-prevStrt)+1);    //copy data into TX buffer
+            if(TxBuf[4]==0x4C) HAL_UART_Transmit(&huart2, TxBuf, endOfBuf+(i-prevStrt)+1,10);    //transmit
+            endOfBuf=0; //reset the TX buffer
+        }
+        if(RxBuf[i]==0x24) prevStrt=i;
+    }
+    memcpy(TxBuf,RxBuf+prevStrt,sizeof(uint8_t)*(dataSndSze-prevStrt));
+    TxBuf[dataSndSze-prevStrt]=0x04;
+    /*
+
+    int numNL1=-1, numStrt1=-2, numNL2=-3, numStrt2=-4;
+    int tst;
+
+    for(int i=0; i<dataSndSze; i++){
+        tst=RxBuf[i];
+        if(tst==0x0a && numNL1!=-1 && numNL2==-3) numNL2=i;
+        if(tst==0x24 && numStrt1!=-2 && numStrt2==-4) numStrt2=i;
+        if(tst==0x0a && numNL1==-1) numNL1=i;
+        if(tst==0x24 && numStrt1==-2) numStrt1=i;
+    }
+    //if there is only one end and two starts (first case)
+    if(numNL1!=-1&&numStrt1!=-2&&numNL2==-3&&numStrt2!=-4){    //2 start bits and 2 end bits
+       for(int i=0;i<numStrt2-numStrt1;i++){
+           myTxData[i]=RxBuf[i+numStrt1];
+       }
+       myTxData[numStrt2-numStrt1]=0x0a;
+       uint8_t txBuf[numStrt2-numStrt1];
+       *//*for(int i=0;i<numStrt2-numStrt1;i++){
+           txBuf[i]=myTxData[i];
+       }*//*
+        memcpy(txBuf,myTxData,sizeof(uint8_t)*(numStrt2-numStrt1));
+       *//*if(txBuf[4]==0x4c) *//*HAL_UART_Transmit(&huart2, txBuf, numStrt2-numStrt1,10);  //only printf GPGLL data
+        for(int i=0;i<dataSndSze-numStrt2;i++){
+            tempRXStore[i]=RxBuf[numStrt2-numStrt1+i];
+        }
+        tempRXStore[dataSndSze-numStrt2]=0x04;    //end of transmission char
+    }
+
+    //if there is two ends and two starts (middle case)
+    if(numNL1!=-1&&numStrt1!=-2&&numNL2!=-3&&numStrt2!=-4){
+        int endTemp=0;
+        while(tempRXStore[endTemp]!=0x04){  //find the end of the temp rx buf
+            endTemp++;
+        }
+        memcpy(tempRXStore+endTemp,RxBuf,sizeof(uint8_t)*(numNL1+1));
+        *//*uint8_t txBuf[endTemp+numNL1];
+        for(int i=0;i<endTemp+numNL1;i++){
+            txBuf[i]=tempRXStore[i];
+        }*//*
+        HAL_UART_Transmit(&huart2, tempRXStore, numNL1,10);  //only printf GPGLL data
+        tempRXStore[0]=0x04;
+
+        for(int i=0;i<numStrt2-numStrt1;i++){
+            myTxData[i]=RxBuf[i+numStrt1];
+        }
+        myTxData[numStrt2-numStrt1]=0x0a;
+        uint8_t txBuf2[numStrt2-numStrt1];
+        for(int i=0;i<numStrt2-numStrt1;i++){
+            txBuf2[i]=myTxData[i];
+        }
+        HAL_UART_Transmit(&huart2, txBuf2, numStrt2-numStrt1,10);
+        int x=0;
+    }
+    //HAL_UART_Transmit(&huart2, myRxData, dataSze,10);
 
     for(int i=0;i<dataSndSze;i++){
         myTxData[i]=0;
-    }
+    }*/
+    /*uint8_t NLBuf[1]={0x0a};
+    HAL_UART_Transmit(&huart2, NLBuf, 1,10);
 
-    int j;
-    for(int i=0;i<dataSze-5;i++){
-        if(myRxData[i]==0x0a && myRxData[i+5]==0x4c){
-            j=0;
-            i++;
-            while(i<dataSze&&myRxData[i]!=0x0d){    //when the end of the array is reached or a carriage return is reached
-                myTxData[j]=myRxData[i];
-                i++;
-                j++;
-            }
-            myTxData[j]=0x0d;myTxData[j+1]=0x0a;   //add new line char at end of array
-            if(i==dataSze){ //if the copy was cut short store in temp array
-                memcpy(dataTempStore, myTxData, j);
-                myTxData[0]=0;
-            }
-            break;
-        }
-    }*//*
-    //if(myTxData[0]!=0)
-    HAL_UART_Transmit(&huart2, myRxData, dataSndSze,10);
-     *//*NOTE : This function should not be modified, when the callback is needed,
-              the HAL_UART_TxCpltCallback can be implemented in the user file.*//*
+    HAL_UART_Transmit(&huart2, RxBuf, dataSndSze,10);
+    HAL_UART_Transmit(&huart2, NLBuf, 1,10);
+    HAL_UART_Transmit(&huart2, NLBuf, 1,10);*/
 
-}*/
+}
 /* USER CODE END 4 */
 
 /**

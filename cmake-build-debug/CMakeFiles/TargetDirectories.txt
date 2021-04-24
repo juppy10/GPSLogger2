@@ -1,3 +1,3 @@
-D:/Will/Documents/GitHub/GPSLogger2/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Will/Documents/GitHub/GPSLogger2/cmake-build-debug/CMakeFiles/GPSLogger2.elf.dir
-D:/Will/Documents/GitHub/GPSLogger2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Juppy/Documents/GitHub/GPSLogger2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Juppy/Documents/GitHub/GPSLogger2/cmake-build-debug/CMakeFiles/GPSLogger2.elf.dir
+C:/Users/Juppy/Documents/GitHub/GPSLogger2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

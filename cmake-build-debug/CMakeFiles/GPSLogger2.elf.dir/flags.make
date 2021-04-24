@@ -3,15 +3,15 @@
 
 # compile ASM with C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major/bin/arm-none-eabi-gcc.exe
 # compile C with C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major/bin/arm-none-eabi-gcc.exe
-ASM_FLAGS = -g   -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g
+ASM_FLAGS = -g   -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -O0 -g
 
 ASM_DEFINES = -DDEBUG -DSTM32F302x8 -DUSE_HAL_DRIVER
 
-ASM_INCLUDES = -ID:\Will\Documents\GitHub\GPSLogger2\Core\Inc -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Device\ST\STM32F3xx\Include -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Include 
+ASM_INCLUDES = -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Core\Inc -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Device\ST\STM32F3xx\Include -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Include 
 
-C_FLAGS = -g   -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g -std=gnu11
+C_FLAGS = -g   -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -O0 -g -std=gnu11
 
 C_DEFINES = -DDEBUG -DSTM32F302x8 -DUSE_HAL_DRIVER
 
-C_INCLUDES = -ID:\Will\Documents\GitHub\GPSLogger2\Core\Inc -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Device\ST\STM32F3xx\Include -ID:\Will\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Include 
+C_INCLUDES = -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Core\Inc -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Device\ST\STM32F3xx\Include -IC:\Users\Juppy\Documents\GitHub\GPSLogger2\Drivers\CMSIS\Include 
 
