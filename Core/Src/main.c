@@ -37,6 +37,8 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
 #define dataSndSze 100
 /* USER CODE END PM */
 
@@ -115,7 +117,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
         HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_13);
-        HAL_Delay(1000);
+        HAL_Delay(100);
     }
   /* USER CODE END 3 */
 }
@@ -396,3 +398,5 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+#pragma clang diagnostic pop

@@ -1426,39 +1426,39 @@ LOAD c:/progra~2/gnuarm~1/102020~1/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../
 LOAD c:/progra~2/gnuarm~1/102020~1/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libm.a
 LOAD c:/progra~2/gnuarm~1/102020~1/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a
 
-.debug_info     0x00000000     0xaef9
- .debug_info    0x00000000     0x116b CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
- .debug_info    0x0000116b      0xe5d CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_hal_msp.c.obj
- .debug_info    0x00001fc8      0x70e CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_it.c.obj
- .debug_info    0x000026d6      0x257 CMakeFiles/GPSLogger2.elf.dir/Core/Src/system_stm32f3xx.c.obj
- .debug_info    0x0000292d       0x22 CMakeFiles/GPSLogger2.elf.dir/Core/Startup/startup_stm32f302r8tx.s.obj
- .debug_info    0x0000294f      0x750 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
- .debug_info    0x0000309f      0xb46 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
- .debug_info    0x00003be5      0x746 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
- .debug_info    0x0000432b      0x686 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
- .debug_info    0x000049b1     0x20e9 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
- .debug_info    0x00006a9a      0x88d CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
- .debug_info    0x00007327     0x153a CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
- .debug_info    0x00008861      0x5a2 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
- .debug_info    0x00008e03     0x171b CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- .debug_info    0x0000a51e      0x9db CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
+.debug_info     0x00000000     0xaefa
+ .debug_info    0x00000000     0x116c CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
+ .debug_info    0x0000116c      0xe5d CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+ .debug_info    0x00001fc9      0x70e CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_it.c.obj
+ .debug_info    0x000026d7      0x257 CMakeFiles/GPSLogger2.elf.dir/Core/Src/system_stm32f3xx.c.obj
+ .debug_info    0x0000292e       0x22 CMakeFiles/GPSLogger2.elf.dir/Core/Startup/startup_stm32f302r8tx.s.obj
+ .debug_info    0x00002950      0x750 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+ .debug_info    0x000030a0      0xb46 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+ .debug_info    0x00003be6      0x746 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
+ .debug_info    0x0000432c      0x686 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+ .debug_info    0x000049b2     0x20e9 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
+ .debug_info    0x00006a9b      0x88d CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
+ .debug_info    0x00007328     0x153a CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+ .debug_info    0x00008862      0x5a2 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+ .debug_info    0x00008e04     0x171b CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ .debug_info    0x0000a51f      0x9db CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
 
-.debug_abbrev   0x00000000     0x1b0b
- .debug_abbrev  0x00000000      0x253 CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
- .debug_abbrev  0x00000253      0x1a3 CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_hal_msp.c.obj
- .debug_abbrev  0x000003f6      0x134 CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_it.c.obj
- .debug_abbrev  0x0000052a      0x113 CMakeFiles/GPSLogger2.elf.dir/Core/Src/system_stm32f3xx.c.obj
- .debug_abbrev  0x0000063d       0x12 CMakeFiles/GPSLogger2.elf.dir/Core/Startup/startup_stm32f302r8tx.s.obj
- .debug_abbrev  0x0000064f      0x1d8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
- .debug_abbrev  0x00000827      0x2ea CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
- .debug_abbrev  0x00000b11      0x1e6 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
- .debug_abbrev  0x00000cf7      0x1b8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
- .debug_abbrev  0x00000eaf      0x214 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
- .debug_abbrev  0x000010c3      0x1ad CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
- .debug_abbrev  0x00001270      0x2c1 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
- .debug_abbrev  0x00001531      0x20e CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
- .debug_abbrev  0x0000173f      0x204 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- .debug_abbrev  0x00001943      0x1c8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
+.debug_abbrev   0x00000000     0x1b23
+ .debug_abbrev  0x00000000      0x26b CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
+ .debug_abbrev  0x0000026b      0x1a3 CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+ .debug_abbrev  0x0000040e      0x134 CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_it.c.obj
+ .debug_abbrev  0x00000542      0x113 CMakeFiles/GPSLogger2.elf.dir/Core/Src/system_stm32f3xx.c.obj
+ .debug_abbrev  0x00000655       0x12 CMakeFiles/GPSLogger2.elf.dir/Core/Startup/startup_stm32f302r8tx.s.obj
+ .debug_abbrev  0x00000667      0x1d8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+ .debug_abbrev  0x0000083f      0x2ea CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+ .debug_abbrev  0x00000b29      0x1e6 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
+ .debug_abbrev  0x00000d0f      0x1b8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+ .debug_abbrev  0x00000ec7      0x214 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
+ .debug_abbrev  0x000010db      0x1ad CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
+ .debug_abbrev  0x00001288      0x2c1 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+ .debug_abbrev  0x00001549      0x20e CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+ .debug_abbrev  0x00001757      0x204 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ .debug_abbrev  0x0000195b      0x1c8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
 
 .debug_aranges  0x00000000      0xa48
  .debug_aranges
@@ -1509,22 +1509,22 @@ LOAD c:/progra~2/gnuarm~1/102020~1/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e
  .debug_ranges  0x000006f0      0x248 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
  .debug_ranges  0x00000938       0x58 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
 
-.debug_line     0x00000000     0x8ccc
- .debug_line    0x00000000      0x501 CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
- .debug_line    0x00000501      0x342 CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_hal_msp.c.obj
- .debug_line    0x00000843      0x2ee CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_it.c.obj
- .debug_line    0x00000b31      0x20f CMakeFiles/GPSLogger2.elf.dir/Core/Src/system_stm32f3xx.c.obj
- .debug_line    0x00000d40       0xb0 CMakeFiles/GPSLogger2.elf.dir/Core/Startup/startup_stm32f302r8tx.s.obj
- .debug_line    0x00000df0      0x50c CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
- .debug_line    0x000012fc      0x677 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
- .debug_line    0x00001973      0x7a8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
- .debug_line    0x0000211b      0x603 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
- .debug_line    0x0000271e     0x2de6 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
- .debug_line    0x00005504      0x434 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
- .debug_line    0x00005938      0xf29 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
- .debug_line    0x00006861      0x761 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
- .debug_line    0x00006fc2     0x1756 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- .debug_line    0x00008718      0x5b4 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
+.debug_line     0x00000000     0x8cc9
+ .debug_line    0x00000000      0x4fe CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
+ .debug_line    0x000004fe      0x342 CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+ .debug_line    0x00000840      0x2ee CMakeFiles/GPSLogger2.elf.dir/Core/Src/stm32f3xx_it.c.obj
+ .debug_line    0x00000b2e      0x20f CMakeFiles/GPSLogger2.elf.dir/Core/Src/system_stm32f3xx.c.obj
+ .debug_line    0x00000d3d       0xb0 CMakeFiles/GPSLogger2.elf.dir/Core/Startup/startup_stm32f302r8tx.s.obj
+ .debug_line    0x00000ded      0x50c CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+ .debug_line    0x000012f9      0x677 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+ .debug_line    0x00001970      0x7a8 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
+ .debug_line    0x00002118      0x603 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+ .debug_line    0x0000271b     0x2de6 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
+ .debug_line    0x00005501      0x434 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
+ .debug_line    0x00005935      0xf29 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+ .debug_line    0x0000685e      0x761 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+ .debug_line    0x00006fbf     0x1756 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ .debug_line    0x00008715      0x5b4 CMakeFiles/GPSLogger2.elf.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c.obj
 
 .debug_str      0x00000000     0x339c
  .debug_str     0x00000000      0xf4b CMakeFiles/GPSLogger2.elf.dir/Core/Src/main.c.obj
